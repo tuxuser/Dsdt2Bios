@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B60265F41906758000B33E75 /* libcapstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B60265F31906758000B33E75 /* libcapstone.a */; };
+		B62AE18318FD95B300465807 /* tools-wizard-128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = B62AE17F18FD95B300465807 /* tools-wizard-128x128.png */; };
+		B62AE18418FD95B300465807 /* tools-wizard-64x64.png in Resources */ = {isa = PBXBuildFile; fileRef = B62AE18018FD95B300465807 /* tools-wizard-64x64.png */; };
+		B62AE18518FD95B300465807 /* tools-wizard-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = B62AE18118FD95B300465807 /* tools-wizard-16x16.png */; };
+		B62AE18618FD95B300465807 /* tools-wizard-32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = B62AE18218FD95B300465807 /* tools-wizard-32x32.png */; };
+		B62AE18818FDA2AF00465807 /* aptio_1.png in Resources */ = {isa = PBXBuildFile; fileRef = B62AE18718FDA2AF00465807 /* aptio_1.png */; };
+		B69A3DA018FD18D6000E44F1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69A3D9F18FD18D6000E44F1 /* Cocoa.framework */; };
+		B69A3DAA18FD18D6000E44F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B69A3DA818FD18D6000E44F1 /* InfoPlist.strings */; };
+		B69A3DAC18FD18D6000E44F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B69A3DAB18FD18D6000E44F1 /* main.m */; };
+		B69A3DB018FD18D6000E44F1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B69A3DAE18FD18D6000E44F1 /* Credits.rtf */; };
+		B69A3DB318FD18D6000E44F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B69A3DB218FD18D6000E44F1 /* AppDelegate.m */; };
+		B69A3DB618FD18D6000E44F1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69A3DB418FD18D6000E44F1 /* MainMenu.xib */; };
+		B69A3DBF18FD18D6000E44F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69A3DBE18FD18D6000E44F1 /* XCTest.framework */; };
+		B69A3DC018FD18D6000E44F1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69A3D9F18FD18D6000E44F1 /* Cocoa.framework */; };
+		B69A3DDC18FD1A54000E44F1 /* Dsdt2Bios.c in Sources */ = {isa = PBXBuildFile; fileRef = B69A3DD618FD1A54000E44F1 /* Dsdt2Bios.c */; };
+		B69A3DE018FD1A96000E44F1 /* DragDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = B69A3DDF18FD1A96000E44F1 /* DragDropView.m */; };
+		B69A3DE318FD46F5000E44F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69A3DB718FD18D6000E44F1 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B69A3DC118FD18D6000E44F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B69A3D9418FD18D6000E44F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B69A3D9B18FD18D6000E44F1;
+			remoteInfo = Dsdt2Bios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B60265F31906758000B33E75 /* libcapstone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcapstone.a; sourceTree = "<group>"; };
+		B62AE17F18FD95B300465807 /* tools-wizard-128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tools-wizard-128x128.png"; sourceTree = "<group>"; };
+		B62AE18018FD95B300465807 /* tools-wizard-64x64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tools-wizard-64x64.png"; sourceTree = "<group>"; };
+		B62AE18118FD95B300465807 /* tools-wizard-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tools-wizard-16x16.png"; sourceTree = "<group>"; };
+		B62AE18218FD95B300465807 /* tools-wizard-32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tools-wizard-32x32.png"; sourceTree = "<group>"; };
+		B62AE18718FDA2AF00465807 /* aptio_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aptio_1.png; sourceTree = "<group>"; };
+		B69A3D9C18FD18D6000E44F1 /* Dsdt2Bios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dsdt2Bios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69A3D9F18FD18D6000E44F1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B69A3DA218FD18D6000E44F1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B69A3DA318FD18D6000E44F1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B69A3DA418FD18D6000E44F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B69A3DA718FD18D6000E44F1 /* Dsdt2Bios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dsdt2Bios-Info.plist"; sourceTree = "<group>"; };
+		B69A3DA918FD18D6000E44F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B69A3DAB18FD18D6000E44F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B69A3DAD18FD18D6000E44F1 /* Dsdt2Bios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dsdt2Bios-Prefix.pch"; sourceTree = "<group>"; };
+		B69A3DAF18FD18D6000E44F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		B69A3DB118FD18D6000E44F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B69A3DB218FD18D6000E44F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B69A3DB518FD18D6000E44F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B69A3DB718FD18D6000E44F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B69A3DBD18FD18D6000E44F1 /* Dsdt2BiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dsdt2BiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69A3DBE18FD18D6000E44F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B69A3DD418FD1A54000E44F1 /* arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arm.h; sourceTree = "<group>"; };
+		B69A3DD518FD1A54000E44F1 /* arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arm64.h; sourceTree = "<group>"; };
+		B69A3DD618FD1A54000E44F1 /* Dsdt2Bios.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Dsdt2Bios.c; sourceTree = "<group>"; };
+		B69A3DD818FD1A54000E44F1 /* mips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mips.h; sourceTree = "<group>"; };
+		B69A3DD918FD1A54000E44F1 /* PeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeImage.h; sourceTree = "<group>"; };
+		B69A3DDA18FD1A54000E44F1 /* ppc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppc.h; sourceTree = "<group>"; };
+		B69A3DDB18FD1A54000E44F1 /* x86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86.h; sourceTree = "<group>"; };
+		B69A3DDE18FD1A96000E44F1 /* DragDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropView.h; sourceTree = "<group>"; };
+		B69A3DDF18FD1A96000E44F1 /* DragDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B69A3D9918FD18D6000E44F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B60265F41906758000B33E75 /* libcapstone.a in Frameworks */,
+				B69A3DA018FD18D6000E44F1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69A3DBA18FD18D6000E44F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69A3DC018FD18D6000E44F1 /* Cocoa.framework in Frameworks */,
+				B69A3DBF18FD18D6000E44F1 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B69A3D9318FD18D6000E44F1 = {
+			isa = PBXGroup;
+			children = (
+				B69A3DA518FD18D6000E44F1 /* Dsdt2Bios */,
+				B69A3D9E18FD18D6000E44F1 /* Frameworks */,
+				B69A3D9D18FD18D6000E44F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B69A3D9D18FD18D6000E44F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B69A3D9C18FD18D6000E44F1 /* Dsdt2Bios.app */,
+				B69A3DBD18FD18D6000E44F1 /* Dsdt2BiosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B69A3D9E18FD18D6000E44F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B69A3D9F18FD18D6000E44F1 /* Cocoa.framework */,
+				B69A3DBE18FD18D6000E44F1 /* XCTest.framework */,
+				B69A3DA118FD18D6000E44F1 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B69A3DA118FD18D6000E44F1 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B69A3DA218FD18D6000E44F1 /* AppKit.framework */,
+				B69A3DA318FD18D6000E44F1 /* CoreData.framework */,
+				B69A3DA418FD18D6000E44F1 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B69A3DA518FD18D6000E44F1 /* Dsdt2Bios */ = {
+			isa = PBXGroup;
+			children = (
+				B69A3DDE18FD1A96000E44F1 /* DragDropView.h */,
+				B69A3DDF18FD1A96000E44F1 /* DragDropView.m */,
+				B69A3DD318FD1A54000E44F1 /* c */,
+				B69A3DB118FD18D6000E44F1 /* AppDelegate.h */,
+				B69A3DB218FD18D6000E44F1 /* AppDelegate.m */,
+				B69A3DB418FD18D6000E44F1 /* MainMenu.xib */,
+				B69A3DB718FD18D6000E44F1 /* Images.xcassets */,
+				B69A3DA618FD18D6000E44F1 /* Supporting Files */,
+			);
+			path = Dsdt2Bios;
+			sourceTree = "<group>";
+		};
+		B69A3DA618FD18D6000E44F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B62AE18718FDA2AF00465807 /* aptio_1.png */,
+				B62AE17F18FD95B300465807 /* tools-wizard-128x128.png */,
+				B62AE18018FD95B300465807 /* tools-wizard-64x64.png */,
+				B62AE18118FD95B300465807 /* tools-wizard-16x16.png */,
+				B62AE18218FD95B300465807 /* tools-wizard-32x32.png */,
+				B69A3DA718FD18D6000E44F1 /* Dsdt2Bios-Info.plist */,
+				B69A3DA818FD18D6000E44F1 /* InfoPlist.strings */,
+				B69A3DAB18FD18D6000E44F1 /* main.m */,
+				B69A3DAD18FD18D6000E44F1 /* Dsdt2Bios-Prefix.pch */,
+				B69A3DAE18FD18D6000E44F1 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B69A3DD318FD1A54000E44F1 /* c */ = {
+			isa = PBXGroup;
+			children = (
+				B60265F31906758000B33E75 /* libcapstone.a */,
+				B69A3DD418FD1A54000E44F1 /* arm.h */,
+				B69A3DD518FD1A54000E44F1 /* arm64.h */,
+				B69A3DD618FD1A54000E44F1 /* Dsdt2Bios.c */,
+				B69A3DD818FD1A54000E44F1 /* mips.h */,
+				B69A3DD918FD1A54000E44F1 /* PeImage.h */,
+				B69A3DDA18FD1A54000E44F1 /* ppc.h */,
+				B69A3DDB18FD1A54000E44F1 /* x86.h */,
+			);
+			path = c;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B69A3D9B18FD18D6000E44F1 /* Dsdt2Bios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B69A3DCD18FD18D6000E44F1 /* Build configuration list for PBXNativeTarget "Dsdt2Bios" */;
+			buildPhases = (
+				B69A3D9818FD18D6000E44F1 /* Sources */,
+				B69A3D9918FD18D6000E44F1 /* Frameworks */,
+				B69A3D9A18FD18D6000E44F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dsdt2Bios;
+			productName = Dsdt2Bios;
+			productReference = B69A3D9C18FD18D6000E44F1 /* Dsdt2Bios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B69A3DBC18FD18D6000E44F1 /* Dsdt2BiosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B69A3DD018FD18D6000E44F1 /* Build configuration list for PBXNativeTarget "Dsdt2BiosTests" */;
+			buildPhases = (
+				B69A3DB918FD18D6000E44F1 /* Sources */,
+				B69A3DBA18FD18D6000E44F1 /* Frameworks */,
+				B69A3DBB18FD18D6000E44F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B69A3DC218FD18D6000E44F1 /* PBXTargetDependency */,
+			);
+			name = Dsdt2BiosTests;
+			productName = Dsdt2BiosTests;
+			productReference = B69A3DBD18FD18D6000E44F1 /* Dsdt2BiosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B69A3D9418FD18D6000E44F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = FredWst;
+				TargetAttributes = {
+					B69A3DBC18FD18D6000E44F1 = {
+						TestTargetID = B69A3D9B18FD18D6000E44F1;
+					};
+				};
+			};
+			buildConfigurationList = B69A3D9718FD18D6000E44F1 /* Build configuration list for PBXProject "Dsdt2Bios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B69A3D9318FD18D6000E44F1;
+			productRefGroup = B69A3D9D18FD18D6000E44F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B69A3D9B18FD18D6000E44F1 /* Dsdt2Bios */,
+				B69A3DBC18FD18D6000E44F1 /* Dsdt2BiosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B69A3D9A18FD18D6000E44F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B62AE18418FD95B300465807 /* tools-wizard-64x64.png in Resources */,
+				B62AE18318FD95B300465807 /* tools-wizard-128x128.png in Resources */,
+				B62AE18818FDA2AF00465807 /* aptio_1.png in Resources */,
+				B62AE18618FD95B300465807 /* tools-wizard-32x32.png in Resources */,
+				B62AE18518FD95B300465807 /* tools-wizard-16x16.png in Resources */,
+				B69A3DAA18FD18D6000E44F1 /* InfoPlist.strings in Resources */,
+				B69A3DE318FD46F5000E44F1 /* Images.xcassets in Resources */,
+				B69A3DB018FD18D6000E44F1 /* Credits.rtf in Resources */,
+				B69A3DB618FD18D6000E44F1 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69A3DBB18FD18D6000E44F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B69A3D9818FD18D6000E44F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69A3DDC18FD1A54000E44F1 /* Dsdt2Bios.c in Sources */,
+				B69A3DB318FD18D6000E44F1 /* AppDelegate.m in Sources */,
+				B69A3DAC18FD18D6000E44F1 /* main.m in Sources */,
+				B69A3DE018FD1A96000E44F1 /* DragDropView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69A3DB918FD18D6000E44F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B69A3DC218FD18D6000E44F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B69A3D9B18FD18D6000E44F1 /* Dsdt2Bios */;
+			targetProxy = B69A3DC118FD18D6000E44F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B69A3DA818FD18D6000E44F1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B69A3DA918FD18D6000E44F1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B69A3DAE18FD18D6000E44F1 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B69A3DAF18FD18D6000E44F1 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		B69A3DB418FD18D6000E44F1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B69A3DB518FD18D6000E44F1 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B69A3DCB18FD18D6000E44F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		B69A3DCC18FD18D6000E44F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		B69A3DCE18FD18D6000E44F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dsdt2Bios/Dsdt2Bios-Prefix.pch";
+				INFOPLIST_FILE = "Dsdt2Bios/Dsdt2Bios-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dsdt2Bios/c",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B69A3DCF18FD18D6000E44F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dsdt2Bios/Dsdt2Bios-Prefix.pch";
+				INFOPLIST_FILE = "Dsdt2Bios/Dsdt2Bios-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dsdt2Bios/c",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B69A3DD118FD18D6000E44F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dsdt2Bios.app/Contents/MacOS/Dsdt2Bios";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dsdt2Bios/Dsdt2Bios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Dsdt2BiosTests/Dsdt2BiosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B69A3DD218FD18D6000E44F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dsdt2Bios.app/Contents/MacOS/Dsdt2Bios";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dsdt2Bios/Dsdt2Bios-Prefix.pch";
+				INFOPLIST_FILE = "Dsdt2BiosTests/Dsdt2BiosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B69A3D9718FD18D6000E44F1 /* Build configuration list for PBXProject "Dsdt2Bios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69A3DCB18FD18D6000E44F1 /* Debug */,
+				B69A3DCC18FD18D6000E44F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B69A3DCD18FD18D6000E44F1 /* Build configuration list for PBXNativeTarget "Dsdt2Bios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69A3DCE18FD18D6000E44F1 /* Debug */,
+				B69A3DCF18FD18D6000E44F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B69A3DD018FD18D6000E44F1 /* Build configuration list for PBXNativeTarget "Dsdt2BiosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69A3DD118FD18D6000E44F1 /* Debug */,
+				B69A3DD218FD18D6000E44F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B69A3D9418FD18D6000E44F1 /* Project object */;
+}
