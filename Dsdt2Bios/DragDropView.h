@@ -14,7 +14,7 @@
 }
 @property (strong) IBOutlet NSTextView *Output;
 
+unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len, unsigned long Old_Dsdt_Size, unsigned long Old_Dsdt_Ofs, char *cr, unsigned short *reloc_padding);
+unsigned int Read_AmiBoardInfo(const char *FileName, unsigned char *d,unsigned long *len, unsigned long *Old_Dsdt_Size, unsigned long *Old_Dsdt_Ofs, int Extract, char *cr);
 
-unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len, unsigned short Old_Dsdt_Size, unsigned short Old_Dsdt_Ofs, char *cr, unsigned short *reloc_padding);
-unsigned int Read_AmiBoardInfo(const char *FileName, unsigned char *d,unsigned long *len, unsigned short *Old_Dsdt_Size, unsigned short *Old_Dsdt_Ofs, int Extract, char *cr);
 @end

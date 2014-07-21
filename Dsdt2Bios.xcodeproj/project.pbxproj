@@ -68,6 +68,7 @@
 		B69A3DDB18FD1A54000E44F1 /* x86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86.h; sourceTree = "<group>"; };
 		B69A3DDE18FD1A96000E44F1 /* DragDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropView.h; sourceTree = "<group>"; };
 		B69A3DDF18FD1A96000E44F1 /* DragDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropView.m; sourceTree = "<group>"; };
+		B69F036A197B0F4F009D9786 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +174,7 @@
 				B69A3DD918FD1A54000E44F1 /* PeImage.h */,
 				B69A3DDA18FD1A54000E44F1 /* ppc.h */,
 				B69A3DDB18FD1A54000E44F1 /* x86.h */,
+				B69F036A197B0F4F009D9786 /* Global.h */,
 			);
 			path = c;
 			sourceTree = "<group>";

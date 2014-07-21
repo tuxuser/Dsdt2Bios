@@ -1,5 +1,6 @@
 
 #import "DragDropView.h"
+#include "global.h"
 
 @implementation DragDropView
 
@@ -40,13 +41,13 @@
     unsigned long len;
     unsigned int ret;
     unsigned char *d =NULL;
-    unsigned short Old_Dsdt_Size, Old_Dsdt_Ofs;
+    unsigned long Old_Dsdt_Size, Old_Dsdt_Ofs;
     const char *FileName;
     char cr[65535];
     unsigned short reloc_padding;
     
 
-    d = malloc(0x10000);
+    d = malloc(DsdtMax+1);
     
     switch ( [draggedFilenames count] ) //Number of files drop
     {

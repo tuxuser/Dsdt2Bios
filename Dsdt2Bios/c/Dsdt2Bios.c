@@ -29,7 +29,8 @@
 #include <string.h>
 #include <unistd.h>
 
-#define debug 1
+#include "global.h"
+
 
 static csh handle;
 
@@ -44,7 +45,7 @@ struct platform
 	cs_opt_value opt_value;
 };
 
-static UINT64 insn_detail(csh ud, cs_mode mode, cs_insn *ins)
+static UINT64 insn_to_patch(csh ud, cs_mode mode, cs_insn *ins)
 {
 	int i;
     UINT64 r = 0;
@@ -56,7 +57,8 @@ static UINT64 insn_detail(csh ud, cs_mode mode, cs_insn *ins)
 		switch((int)op->type)
         {
 			case X86_OP_MEM:
-                if ((op->mem.disp > 0x900) && (op->mem.disp < 0xf000) ) r = op->mem.disp;
+                //Patch memory operator for adr space greater than base address and lower max Dsdt space
+                if ((op->mem.disp > 0x900) && (op->mem.disp < (DsdtMax & 0xFF000)) ) r = op->mem.disp;
                 break;
 			default:
                 break;
@@ -102,13 +104,14 @@ static int Disass(unsigned char *X86_CODE64, int CodeSize, int size, char *cr)
 			size_t j;
 			for (j = 0; j < count; j++)
             {
-				if ( insn_detail(handle, platforms[i].mode, &insn[j]) != 0)
+				if ( insn_to_patch(handle, platforms[i].mode, &insn[j]) != 0)
                 {
-                    unsigned short *adr = (unsigned short *)&X86_CODE64[insn[j].address+3];
-                    *adr += size;
+                    unsigned int *adr = (unsigned int *)&X86_CODE64[insn[j].address+3];
+                    *adr += size; 
                     if ( debug ) sprintf(cr,"%s%s\t%s \t-> \t[0x%x]\n",cr, insn[j].mnemonic, insn[j].op_str,*adr);
                     ret = 1;
                 }
+               
             }
             // free memory allocated by cs_disasm_ex()
 			cs_free(insn, count);
@@ -120,10 +123,11 @@ static int Disass(unsigned char *X86_CODE64, int CodeSize, int size, char *cr)
 		}
 		cs_close(&handle);
 	}
+
     return ret;
 }
 
-unsigned int Read_AmiBoardInfo(const char *FileName, unsigned char *d,unsigned long *len, unsigned short *Old_Dsdt_Size, unsigned short *Old_Dsdt_Ofs, int Extract, char *cr)
+unsigned int Read_AmiBoardInfo(const char *FileName, unsigned char *d,unsigned long *len, unsigned long *Old_Dsdt_Size, unsigned long *Old_Dsdt_Ofs, int Extract, char *cr)
 {
     int fd_amiboard, fd_out;
     EFI_IMAGE_DOS_HEADER *HeaderDOS;
@@ -137,7 +141,7 @@ unsigned int Read_AmiBoardInfo(const char *FileName, unsigned char *d,unsigned l
         return 0;
     }
     //Get size of AmiBoardInfo in Header
-    *len = read(fd_amiboard, d, 0xFFFF);
+    *len = read(fd_amiboard, d, DsdtMax);
     close(fd_amiboard);
     
     HeaderDOS = (EFI_IMAGE_DOS_HEADER *)&d[0];
@@ -157,7 +161,7 @@ unsigned int Read_AmiBoardInfo(const char *FileName, unsigned char *d,unsigned l
     {
         if ((d[*Old_Dsdt_Ofs] =='D') && (d[*Old_Dsdt_Ofs+1] =='S') && (d[*Old_Dsdt_Ofs+2] =='D') && (d[*Old_Dsdt_Ofs+3] =='T'))
         {
-            *Old_Dsdt_Size = (d[*Old_Dsdt_Ofs+5] << 8) + d[*Old_Dsdt_Ofs+4];
+            *Old_Dsdt_Size = (d[*Old_Dsdt_Ofs+7] << 24) + (d[*Old_Dsdt_Ofs+6] << 16) + (d[*Old_Dsdt_Ofs+5] << 8) + d[*Old_Dsdt_Ofs+4];
             break;
         }
     }
@@ -188,13 +192,13 @@ unsigned int Read_AmiBoardInfo(const char *FileName, unsigned char *d,unsigned l
     return 1;
 }
 
-unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len, unsigned short Old_Dsdt_Size, unsigned short Old_Dsdt_Ofs, char *cr,unsigned short *reloc_padding)
+unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len, unsigned long Old_Dsdt_Size, unsigned long Old_Dsdt_Ofs, char *cr,unsigned short *reloc_padding)
 {
     int fd_dsdt, fd_out, i, j;
     unsigned long dsdt_len;
     short size, padding;
     unsigned char *dsdt;
-    unsigned short New_Dsdt_Size;
+    unsigned long New_Dsdt_Size;
     
     
     EFI_IMAGE_DOS_HEADER *HeaderDOS;
@@ -202,7 +206,7 @@ unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len
     EFI_IMAGE_SECTION_HEADER *Section;
 
     
-    dsdt = malloc(0x10000);
+    dsdt = malloc(DsdtMax+1);
     
     
     fd_dsdt = open(FileName, O_RDWR | O_NONBLOCK);
@@ -214,7 +218,7 @@ unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len
         return 0;
     }
     //Read DSDT into buffer
-    dsdt_len = read(fd_dsdt, dsdt, 0xFFFF);
+    dsdt_len = read(fd_dsdt, dsdt, DsdtMax);
     close(fd_dsdt);
     
     if (!((dsdt[0] =='D') && (dsdt[1] =='S') && (dsdt[2] =='D') && (dsdt[3] =='T')))
@@ -236,15 +240,15 @@ unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len
         }
     }
         
-    New_Dsdt_Size = (dsdt[5] << 8) + dsdt[4];
+    New_Dsdt_Size = (dsdt[7] << 24) + (dsdt[6] << 16) + (dsdt[5] << 8) + dsdt[4];
     
     size = New_Dsdt_Size - Old_Dsdt_Size;
     padding = 0x10-(len+size)&0x0f;
     size += padding + *reloc_padding;
     
-    if ((len+size) > 0xFFFF)
+    if ((len+size) > DsdtMax)
     {
-        sprintf(cr,"\n\n\n\n\n\n\n\nFinal size > 0xFFFF not tested aborting\n");
+        sprintf(cr,"\n\n\n\n\n\n\n\nFinal size > %0x not tested aborting\n",DsdtMax);
         free(dsdt);
         return 0;
     }
@@ -329,6 +333,7 @@ unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len
                     UINT32 OldOfs = 0;
                     do
                     {
+                        //Need 32 bits pointer base
                         p = (UINT32 *)(&d[Section[i].PointerToRawData]) + Offset;
                         Offset = p->SizeOfBlock / sizeof(UINT32);
                         sizeSection += p->SizeOfBlock;
@@ -337,7 +342,7 @@ unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len
                         index = 0;
                         if ( debug ) sprintf(cr,"%sVirtual base address           \t0x%04x",cr,p->VirtualAddress);
                         OldAdr = p->VirtualAddress;
-                        if (p->VirtualAddress != 0 ) p->VirtualAddress =(len + size) & 0xf000;
+                        if (p->VirtualAddress != 0 ) p->VirtualAddress =(len + size) & (DsdtMax & 0xFF000);
                         
                         if ( debug ) sprintf(cr,"%s\t -> \t0x%04x\n",cr,p->VirtualAddress);
 
@@ -383,6 +388,8 @@ unsigned int Read_Dsdt(const char *FileName, unsigned char *d, unsigned long len
     remove(FileOutput);
     if ( debug ) sprintf(cr,"%sPatching adr in code\n",cr);
     if ( debug ) sprintf(cr,"%s--------------------\n\n",cr);
+    
+
     if ( Disass(&d[HeaderNT->OptionalHeader.BaseOfCode],HeaderNT->OptionalHeader.SizeOfCode, size,cr) )
     {
         fd_out = open(FileOutput, O_CREAT | O_RDWR | O_NONBLOCK, 0666 );
